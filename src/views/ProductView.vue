@@ -1,9 +1,11 @@
 <template>
     <div class="container">
-      <div class="row align-items-center">
+
+      <div class="row align-items-center m-5">
           <div class="col-md-7">
             <h2>森心靈課程</h2>
-            <img class="img-fluid object-fit-cover w-100 mb-2" style="height:32.5em; width: 47.5em;" :src="product.imageUrl" alt=""> 
+            <img v-if="this.isLoading===true" src="https://res.cloudinary.com/bytesizedpieces/image/upload/v1656084931/article/a-how-to-guide-on-making-an-animated-loading-image-for-a-website/animated_loader_gif_n6b5x0.gif" alt="">
+            <img v-else class="img-fluid object-fit-cover w-100 mb-2" style="height:32.5em; width: 47.5em;" :src="product.imageUrl" alt=""> 
           </div>
                 <div class="col-md-5">
                     <span><p>{{ product.category }}</p></span>
@@ -25,14 +27,16 @@
                   </div>    
             </div>
       </div>
-      <div class="row justify-content-center border-top border-2 py-3">
-        <div class="col-lg-6">
-          <h3 class="fw-bold">活動內容</h3>
+      <div class="row justify-content-center border-top border-2 py-3 m-3">
+        <div class="col-lg-6 mt-5">
           <table class="w-100">
             <tbody>
-              <tr><img :src="product.imagesUrl" style="height: 30em;"
-                class="img-fluid object-fit-cover w-100" alt="..."></tr>
-              <tr class="text-wrap">{{ product.content }}</tr>
+              <tr>
+                <img v-if="this.isLoading===true" src="https://res.cloudinary.com/bytesizedpieces/image/upload/v1656084931/article/a-how-to-guide-on-making-an-animated-loading-image-for-a-website/animated_loader_gif_n6b5x0.gif" alt="">
+                <img v-else :src="product.imagesUrl" style="height: 30em;"  
+                class="img-fluid object-fit-cover w-100 my-3" alt="..."></tr>
+                          <h3 class="fw-bold my-3">活動內容</h3>
+              <tr class="text-wrap m-3 lh-lg">{{ product.content }}</tr>
             </tbody>
           </table>
       </div> 
@@ -41,6 +45,8 @@
 
 <script>
 import axios from 'axios'
+import "https://cdn.jsdelivr.net/npm/vue-loading-overlay@3.4.0/dist/vue-loading.min.js"
+
 
 const { VITE_URL, VITE_PATH  } = import.meta.env
 
@@ -48,7 +54,8 @@ export default {
   data() {
     return {
       product: [],
-      person_qty: 0
+      person_qty: 0,
+      isLoading: true
     }
   },
   created() {
@@ -60,6 +67,7 @@ export default {
       axios.get(`${VITE_URL}/v2/api/${VITE_PATH}/product/${id}`)
         .then((res) => {
           this.product = res.data.product
+          this.isLoading = false
         })
         .catch((error) => {
           alert(error)
@@ -77,7 +85,7 @@ export default {
         .catch((error) => {
           alert(error)
         })
-    }
+    },
   },
   mounted() {
     //console.log(this.$route)

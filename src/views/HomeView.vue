@@ -25,20 +25,31 @@
     <div class="row mt-5 ">
       <h2 class="text-center my-5" style="color: #41774A; letter-spacing: 0.5em">體驗活動</h2>
       <div class="col-lg-3 mb-5 d-flex justify-content-center">
-        <img src="../assets/img/courses/courses_herbs.png" style="height: 300px; width:300px" alt="">
-        <h4 class="text-center">草藥研磨體驗</h4>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded" src="../assets/img/courses/courses_herbs.png" style="height: 300px; width:300px" alt="">
+        
+          <figcaption class="figure-caption text-center" style="font-size: 24px; font-weight: bold;">草藥研磨體驗</figcaption>
+          <!-- <h4 class="text-center pt-2">草藥研磨體驗</h4> -->
+        </figure>
       </div>
       <div class="col-lg-3 mt-5 d-flex justify-content-center">
-        <img src="../assets/img/courses/courses_yoga.png" style="height: 300px; width:300px" alt="">
-        <h4 class="text-center">瑜珈伸展</h4>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded" src="../assets/img/courses/courses_yoga.png" style="height: 300px; width:300px" alt="">
+        
+          <figcaption class="figure-caption text-center" style="font-size: 24px; font-weight: bold;">瑜珈伸展</figcaption>
+        </figure>
       </div>
       <div class="col-lg-3 mb-5 d-flex justify-content-center">
-        <img src="../assets/img/courses/courses_oil.png" style="height: 300px; width:300px" alt="">
-        <h4 class="text-center">精油舒緩</h4>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded" src="../assets/img/courses/courses_oil.png" style="height: 300px; width:300px" alt="">
+          <figcaption class="figure-caption text-center" style="font-size: 24px; font-weight: bold;">精油舒緩</figcaption>
+        </figure>
       </div>
       <div class="col-lg-3 mt-5 d-flex justify-content-center">
-        <img src="../assets/img/courses/courses_vegan.png" style="height: 300px; width:300px" alt="">
-        <h4 class="text-center">來自大地的饗宴</h4>
+        <figure class="figure">
+          <img class="figure-img img-fluid rounded" src="../assets/img/courses/courses_vegan.png" style="height: 300px; width:300px" alt="">
+          <figcaption class="figure-caption text-center" style="font-size: 24px; font-weight: bold;">來自大地的饗宴</figcaption>
+        </figure>
       </div>
     </div>
 

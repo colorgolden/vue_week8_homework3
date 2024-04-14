@@ -2,6 +2,8 @@
 <div style="display: flex; justify-content: center; align-items: center;">
   <RouterLink to="/"><img style="height:200px;" src="../../assets/img/logo.png"/></RouterLink>
 </div>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
   <form style="display: flex; flex-direction:column; justify-content: center; align-items: center;">
     <div class="form-group">
       <label for="exampleInputEmail1">管理者帳號(電子信箱)</label>
@@ -33,10 +35,14 @@
       登入
     </button>
   </form>
+  </div>
+</div>
 </template>
 
 <script>
 import axios from 'axios'
+import 'bootstrap/scss/bootstrap.scss'
+import "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 
 const url = 'https://vue3-course-api.hexschool.io' // 請加入站點
 
@@ -63,7 +69,7 @@ export default {
         .then((res) => {
           alert(res.data.message)
           const { token, expired } = res.data // 寫入 cookie token
-          console.log('token',token)
+          //console.log('token',token)
           document.cookie = `newToken=${token}; expires=${new Date(expired)};` // expires 設置有效時間
           this.$router.push('/admin/products')
         })
